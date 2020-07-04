@@ -1,11 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@400;
 
-/*!
- * Bootstrap v4.5.0 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+700&display=swap);@charset "UTF-8";
 
 :root {
   --blue: #3490dc;
@@ -25158,13 +25153,51 @@ input[type=color].form-control:disabled {
   vertical-align: text-bottom;
 }
 
+body {
+  background-color: #dcdfe0;
+}
+
+.main-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin: 36px;
+}
+
+.post-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.post-description {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+}
+
+.post-body {
+  font-family: "Roboto", sans-serif;
+}
+
+li a {
+  text-decoration: none !important;
+  color: black;
+}
+
+li a:hover {
+  text-decoration: none !important;
+  color: black;
+}
+
 .home-blog-container {
   border-radius: 33px;
-  background: #dcdfe0;
+  background-color: #dcdfe0;
   box-shadow: 33px 33px 66px #bbbebe, -33px -33px 66px #fdffff;
+  padding: 24px;
+  margin-bottom: 32px;
 }
 
 .blog-list {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 

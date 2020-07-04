@@ -2000,14 +2000,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -80806,52 +80798,75 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Blog Posts")]),
+    _c("h3", { staticClass: "text-center main-title" }, [_vm._v("Blog Posts")]),
     _c("br"),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _vm._m(0),
-      _vm._v(" "),
       _c(
         "ul",
         { staticClass: "blog-list" },
         _vm._l(_vm.posts, function(post) {
-          return _c("li", { key: post.id }, [
-            _c("div", { staticClass: "home-blog-container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-8 offset-2" }, [
-                  _c("div", {}, [_c("h4", [_vm._v(_vm._s(post.title))])])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row pt-2 pb-4" }, [
-                _c("div", { staticClass: "col-8 offset-2" }, [
-                  _c("h5", [_vm._v(_vm._s(post.desc))]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(post.body))]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(post.image))])
-                ])
-              ])
-            ])
-          ])
+          return _c(
+            "li",
+            { key: post.id },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "post-links",
+                  attrs: { to: { name: "view", params: { id: post.id } } }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "home-blog-container col-10 offset-1" },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("div", {}, [
+                            _c(
+                              "h4",
+                              { staticClass: "post-title text-center" },
+                              [_vm._v(_vm._s(post.title))]
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row pt-2 pb-4" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c(
+                            "h5",
+                            {
+                              staticClass:
+                                "post.description\n                            "
+                            },
+                            [_vm._v(_vm._s(post.desc))]
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "post.body" }, [
+                            _vm._v(_vm._s(post.body))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v(_vm._s(post.image))])
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ],
+            1
+          )
         }),
         0
       ),
       _vm._v(" "),
-      _vm._m(1)
+      _vm._m(0)
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-6 offset-3" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
