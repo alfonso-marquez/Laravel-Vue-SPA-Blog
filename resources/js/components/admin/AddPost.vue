@@ -18,7 +18,7 @@
                             <textarea type="text" rows="10" class="form-control" v-model="post.body"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>Image</label>
                             <input type="text" class="form-control" v-model="post.image">
                             <!-- <input type="file" name="image"  id="inputFileUpload"
                                 v-on:change="onFileChange"> -->
