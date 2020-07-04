@@ -2,37 +2,43 @@
     <div>
         <h3 class="text-center">Blog Posts</h3><br/>
 
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Body</th>
-                <th>Image</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="post in posts" :key="post.id">
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.desc }}</td>
-                <td>{{ post.body }}</td>
-                <td>{{ post.image }}</td>
-                <td>{{ post.created_at }}</td>
-                <td>{{ post.updated_at }}</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <router-link :to="{name: 'view', params: { id: post.id }}" class="btn btn-primary">View Post
-                        </router-link>
+        <div class="container">
+
+        <div class="row">
+        <div class="col-6 offset-3">
+        <!-- <a href="/profile/{{ $post.id }}"> -->
+            <!-- <img src="/storage/{{ $post.image }}" class="w-100"> -->
+        <!-- </a> -->
+        </div>
+    </div>
+
+    <ul class="blog-list">
+        <li v-for="post in posts" :key="post.id">
+            <div class="home-blog-container">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <div class="">
+                            <h4>{{ post.title }}</h4>
+                        </div>
                     </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </div>  
+                <div class="row pt-2 pb-4">
+                    <div class="col-8 offset-2">
+                        <h5>{{ post.desc }}</h5>
+                        <p>{{ post.body }}</p>
+                        <p>{{ post.image }}</p>
+                    </div>
+                </div>
+    </div>
+        </li>
+    </ul>
+    
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <!-- {{ $posts->links() }} -->
+        </div>
+    </div>          
+        </div>
     </div>
 </template>
 

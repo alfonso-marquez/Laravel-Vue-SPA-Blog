@@ -2002,6 +2002,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -80803,48 +80809,37 @@ var render = function() {
     _c("h3", { staticClass: "text-center" }, [_vm._v("Blog Posts")]),
     _c("br"),
     _vm._v(" "),
-    _c("table", { staticClass: "table table-bordered" }, [
+    _c("div", { staticClass: "container" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
-        "tbody",
+        "ul",
+        { staticClass: "blog-list" },
         _vm._l(_vm.posts, function(post) {
-          return _c("tr", { key: post.id }, [
-            _c("td", [_vm._v(_vm._s(post.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.title))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.desc))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.body))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.image))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.created_at))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(post.updated_at))]),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "div",
-                { staticClass: "btn-group", attrs: { role: "group" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { to: { name: "view", params: { id: post.id } } }
-                    },
-                    [_vm._v("View Post\n                    ")]
-                  )
-                ],
-                1
-              )
+          return _c("li", { key: post.id }, [
+            _c("div", { staticClass: "home-blog-container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-8 offset-2" }, [
+                  _c("div", {}, [_c("h4", [_vm._v(_vm._s(post.title))])])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row pt-2 pb-4" }, [
+                _c("div", { staticClass: "col-8 offset-2" }, [
+                  _c("h5", [_vm._v(_vm._s(post.desc))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(post.body))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(post.image))])
+                ])
+              ])
             ])
           ])
         }),
         0
-      )
+      ),
+      _vm._v(" "),
+      _vm._m(1)
     ])
   ])
 }
@@ -80853,24 +80848,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("ID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Title")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Description")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Body")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Image")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Created At")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Updated At")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
-      ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-6 offset-3" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 d-flex justify-content-center" })
     ])
   }
 ]
@@ -81031,7 +81018,7 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
+              _c("div", { attrs: { lass: "form-group" } }, [
                 _c("label", [_vm._v("Image")]),
                 _vm._v(" "),
                 _c("input", {

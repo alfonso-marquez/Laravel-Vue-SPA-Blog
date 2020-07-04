@@ -8,3 +8,15 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
+
+.home-blog-container {
+    border-radius: 33px;
+    background: #dcdfe0;
+    box-shadow:  33px 33px 66px #bbbebe, 
+                -33px -33px 66px #fdffff;
+}
+
+.blog-list {
+    list-style-type: none;
+}
+
