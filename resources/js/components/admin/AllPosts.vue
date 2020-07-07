@@ -1,5 +1,6 @@
 <template>
     <div>
+        <vue-progress-bar></vue-progress-bar>
         <div class="row search-bar">
              <input type="text" v-model="search" placeholder="Search Title..."/>
         </div>
@@ -49,10 +50,12 @@
             }
         },
         created() {
+            this.$Progress.start()
             this.axios
                 .get('http://localhost:8000/api/posts')
                 .then(response => {
                     this.posts = response.data;
+                    this.$Progress.finish()
                 });
         },
           computed: {
@@ -79,11 +82,13 @@
         //     });
         // },
             deletePost(id) {
+                this.$Progress.start()
                 this.axios
                     .delete(`http://localhost:8000/api/post/delete/${id}`)
                     .then(response => {
                         let i = this.posts.map(item => item.id).indexOf(id); // find index of your object
                         this.posts.splice(i, 1)
+                        this.$Progress.finish()
                     });
             }
         }

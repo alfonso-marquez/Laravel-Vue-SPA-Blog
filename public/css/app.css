@@ -25154,13 +25154,37 @@ input[type=color].form-control:disabled {
 }
 
 body {
-  background-color: #dcdfe0;
+  background: #fcfcfc;
+}
+
+ul {
+  -webkit-padding-start: 0px !important;
+          padding-inline-start: 0px !important;
+}
+
+.app-title {
+  color: #3490dc;
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  margin: 16px 0 16px;
 }
 
 .main-title {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   margin: 36px;
+}
+
+.home-panel {
+  margin-bottom: 16px;
+}
+
+.admin-panel {
+  margin-bottom: 16px;
+}
+
+.nav-link {
+  color: #3490dc;
 }
 
 .post-title {
@@ -25188,11 +25212,12 @@ li a:hover {
 }
 
 .home-blog-container {
-  border-radius: 33px;
-  background-color: #dcdfe0;
-  box-shadow: 33px 33px 66px #bbbebe, -33px -33px 66px #fdffff;
+  border-radius: 50px;
+  background: #fcfcfc;
+  box-shadow: 15px 15px 30px #bababa, -15px -15px 30px #ffffff;
   padding: 24px;
   margin-bottom: 32px;
+  min-width: 80vw;
 }
 
 .blog-list {

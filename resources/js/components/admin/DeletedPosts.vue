@@ -1,7 +1,7 @@
 <template>
     <div>
+        <vue-progress-bar></vue-progress-bar>
         <h3 class="main-title text-center">Deleted Blog Posts</h3><br/>
-
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -45,19 +45,23 @@
             }
         },
         created() {
+            this.$Progress.start()
             this.axios
                 .get('http://localhost:8000/api/deletedposts')
                 .then(response => {
                     this.deletedposts = response.data;
+                    this.$Progress.finish()
                 });
         },
         methods: {
             restorePost(id) {
+                this.$Progress.start()
                 this.axios
                     .delete(`http://localhost:8000/api/post/restore/${id}`)
                     .then(response => {
                         let i = this.deletedposts.map(item => item.id).indexOf(id); // find index of your object
                         this.deletedposts.splice(i, 1)
+                        this.$Progress.finish()
                     });
             }
         }

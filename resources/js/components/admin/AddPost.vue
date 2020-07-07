@@ -1,5 +1,6 @@
 <template>
     <div>
+        <vue-progress-bar></vue-progress-bar>
         <h3 class="main-title text-center">Add Post</h3>
         <div class="row">
             <div class="col-lg-12">
@@ -46,10 +47,12 @@
         methods: {
                     
             addPost() {
+                this.$Progress.start()
                 this.axios
                     .post('http://localhost:8000/api/post/add', this.post)
                     .then(response => (
-                        this.$router.push({name: 'home'})
+                        this.$router.push({name: 'home'}),
+                        this.$Progress.finish()
                         // console.log(response.data)
                     ))
                     .catch(error => console.log(error))

@@ -19,19 +19,21 @@
     
         <b-sidebar
             id="sidebar-backdrop"
-            bg-variant="dark" text-variant="light"
             backdrop
             shadow
         >   
             <div class="container">
-                <h4 style="color:white">Laravel Vue Blog (SPA)</h4>
-                <h5 class="nav-item">User Panel</h5>
-                <router-link to="/" class="nav-item nav-link"><b-icon icon="house-fill"></b-icon>Home</router-link>
-                
-                <h5 class="nav-item">Admin Panel</h5>
-                <router-link to="/admin/posts" class="nav-item nav-link"><b-icon icon="folder-fill"></b-icon> List Blog Posts</router-link>
-                <router-link to="/admin/add" class="nav-item nav-link"><b-icon icon="plus-circle-fill"></b-icon>Add Blog Post</router-link>
-                <router-link to="/admin/deletedPosts" class="nav-item nav-link"><b-icon icon="trash-fill"></b-icon>Deleted Blog Posts</router-link>
+                <h4 class="app-title">Laravel Vue Blog (SPA)</h4>
+                <div class="home-panel">
+                    <h5 class="nav-item">User Panel</h5>
+                    <router-link to="/" class="nav-item nav-link"><b-icon icon="house-fill"></b-icon> Home</router-link>
+                </div>
+                <div class="admin-panel">
+                    <h5 class="nav-item">Admin Panel</h5>
+                    <router-link to="/admin/posts" class="nav-item nav-link"><b-icon icon="folder-fill"></b-icon> List Blog Posts</router-link>
+                    <router-link to="/admin/add" class="nav-item nav-link"><b-icon icon="plus-circle-fill"></b-icon> Add Blog Post</router-link>
+                    <router-link to="/admin/deletedPosts" class="nav-item nav-link"><b-icon icon="trash-fill"></b-icon> Deleted Blog Posts</router-link>
+                </div>
             </div>
          </b-sidebar>
          

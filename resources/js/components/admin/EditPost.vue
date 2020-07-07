@@ -1,5 +1,6 @@
 <template>
     <div>
+        <vue-progress-bar></vue-progress-bar>
         <h3 class="text-center">Edit Post</h3>
         <div class="row">
             <div class="col-md-6">
@@ -35,6 +36,7 @@
             }
         },
         created() {
+            this.$Progress.start()
             this.axios
                 .get(`http://localhost:8000/api/post/edit/${this.$route.params.id}`)
                 .then((response) => {
@@ -48,6 +50,7 @@
                     .post(`http://localhost:8000/api/post/update/${this.$route.params.id}`, this.post)
                     .then((response) => {
                         this.$router.push({name: 'home'});
+                        this.$Progress.finish()
                     });
             }
         }

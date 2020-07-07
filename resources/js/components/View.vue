@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3 class="main-title text-center">View Post</h3>
-        <div class="home-blog-container col-10 offset-1">
+        <div class="home-blog-container col-12">
         <p>ID: {{ post.id }}</p>
         <p class="post-title">{{ post.title }}</p> 
         <p class="post-description">{{ post.desc }}</p>
