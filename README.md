@@ -8,7 +8,7 @@ Shall handle file upload for images for a specific blog.
 
 ✅ API shall include all CRUD functionality needed for a blog application.
 
- Must include search and filtering functionality.
+✅ Must include search and filtering functionality. (Search Title only)
 
 
 FrontEnd
