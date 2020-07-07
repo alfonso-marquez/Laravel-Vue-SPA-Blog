@@ -25201,3 +25201,9 @@ li a:hover {
   flex-wrap: wrap;
 }
 
+.search-bar {
+  right: 0;
+  position: absolute;
+  margin: 16px;
+}
+

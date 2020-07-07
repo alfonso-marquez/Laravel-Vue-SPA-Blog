@@ -1,13 +1,12 @@
 <template>
     <div>
-        <h3>View Post</h3>
-        <div>
-        <p> {{ post.id }} </p>
-        <p>{{ post.title }} </p> 
-        <p>{{ post.title }} </p> 
-        <p> {{ post.desc }}</p>
+        <h3 class="main-title text-center">View Post</h3>
+        <div class="home-blog-container col-10 offset-1">
+        <p>ID: {{ post.id }}</p>
+        <p class="post-title">{{ post.title }}</p> 
+        <p class="post-description">{{ post.desc }}</p>
         <p>{{ post.body }}</p>
-        <p>{{ post.image }} </p>
+        <p>{{ post.image }}</p>
         <!-- <router-link :to="{name: 'view', params: { id: post.id }}" class="btn btn-primary">
             View Blog Post
         </router-link> -->

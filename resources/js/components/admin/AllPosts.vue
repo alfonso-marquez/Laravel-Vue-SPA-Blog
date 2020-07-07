@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h3 class="text-center">Blog Posts</h3><br/>
+        <div class="row search-bar">
+             <input type="text" v-model="search" placeholder="Search Title..."/>
+        </div>
+        <h3 class="main-title text-center">Blog Posts</h3><br/>
 
         <table class="table table-bordered">
             <thead>
@@ -16,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="post in posts" :key="post.id">
+            <tr v-for="post in filteredLists" :key="post.id">
                 <td>{{ post.id }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.desc }}</td>
@@ -41,7 +44,8 @@
     export default {
         data() {
             return {
-                posts: []
+                posts: [],
+                search: '',
             }
         },
         created() {
@@ -51,7 +55,29 @@
                     this.posts = response.data;
                 });
         },
+          computed: {
+                filteredLists() {
+                return this.posts.filter(post => {
+                    return post.title.toLowerCase().includes(this.search.toLowerCase())
+                })
+                }
+            },
         methods: {
+        //     getFilteredPosts() {
+        //         console.log("filter loaded");
+        //         this.axios
+        //          .get('http://localhost:8000/api/posts')
+        //          .then(response =>)
+        //         .then(res => {
+        //         if (this.search) {
+        //             this.posts = res.results.filter(posts =>
+        //             posts.title.toLowerCase().includes(this.search.toLowerCase())
+        //             );
+        //         } else {
+        //             this.posts = res.results;
+        //         }
+        //     });
+        // },
             deletePost(id) {
                 this.axios
                     .delete(`http://localhost:8000/api/post/delete/${id}`)

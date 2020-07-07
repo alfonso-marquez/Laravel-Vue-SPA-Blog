@@ -45,13 +45,15 @@ li a:hover {
                 -33px -33px 66px #fdffff;
     padding:24px;
     margin-bottom:32px;
-
 }
-
-
 .blog-list {
 
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+}
+.search-bar {
+    right: 0;
+    position: absolute;
+    margin: 16px;
 }

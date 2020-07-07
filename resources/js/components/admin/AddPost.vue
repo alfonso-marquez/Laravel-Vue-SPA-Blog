@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">Add Post</h3>
+        <h3 class="main-title text-center">Add Post</h3>
         <div class="row">
             <div class="col-lg-12">
                 <form @submit.prevent="addPost" enctype="multipart/form-data">

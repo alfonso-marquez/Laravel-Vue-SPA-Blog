@@ -15,8 +15,7 @@
                         </div>  
                         <div class="row pt-2 pb-4">
                             <div class="col-12">
-                                <h5 class="post.description
-                                ">{{ post.desc }}</h5>
+                                <h5 class="post-description">{{ post.desc }}</h5>
                                 <p class="post.body">{{ post.body }}</p>
                                 <p>{{ post.image }}</p>
                             </div>

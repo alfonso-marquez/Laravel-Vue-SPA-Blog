@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">Deleted Blog Posts</h3><br/>
+        <h3 class="main-title text-center">Deleted Blog Posts</h3><br/>
 
         <table class="table table-bordered">
             <thead>

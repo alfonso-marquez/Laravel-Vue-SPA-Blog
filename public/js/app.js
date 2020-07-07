@@ -1999,7 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2026,7 +2025,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2180,10 +2178,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      search: ''
     };
   },
   created: function created() {
@@ -2193,17 +2195,41 @@ __webpack_require__.r(__webpack_exports__);
       _this.posts = response.data;
     });
   },
-  methods: {
-    deletePost: function deletePost(id) {
+  computed: {
+    filteredLists: function filteredLists() {
       var _this2 = this;
 
+      return this.posts.filter(function (post) {
+        return post.title.toLowerCase().includes(_this2.search.toLowerCase());
+      });
+    }
+  },
+  methods: {
+    //     getFilteredPosts() {
+    //         console.log("filter loaded");
+    //         this.axios
+    //          .get('http://localhost:8000/api/posts')
+    //          .then(response =>)
+    //         .then(res => {
+    //         if (this.search) {
+    //             this.posts = res.results.filter(posts =>
+    //             posts.title.toLowerCase().includes(this.search.toLowerCase())
+    //             );
+    //         } else {
+    //             this.posts = res.results;
+    //         }
+    //     });
+    // },
+    deletePost: function deletePost(id) {
+      var _this3 = this;
+
       this.axios["delete"]("http://localhost:8000/api/post/delete/".concat(id)).then(function (response) {
-        var i = _this2.posts.map(function (item) {
+        var i = _this3.posts.map(function (item) {
           return item.id;
         }).indexOf(id); // find index of your object
 
 
-        _this2.posts.splice(i, 1);
+        _this3.posts.splice(i, 1);
       });
     }
   }
@@ -80835,14 +80861,9 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "row pt-2 pb-4" }, [
                         _c("div", { staticClass: "col-12" }, [
-                          _c(
-                            "h5",
-                            {
-                              staticClass:
-                                "post.description\n                            "
-                            },
-                            [_vm._v(_vm._s(post.desc))]
-                          ),
+                          _c("h5", { staticClass: "post-description" }, [
+                            _vm._v(_vm._s(post.desc))
+                          ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "post.body" }, [
                             _vm._v(_vm._s(post.body))
@@ -80898,20 +80919,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", [_vm._v("View Post")]),
+    _c("h3", { staticClass: "main-title text-center" }, [_vm._v("View Post")]),
     _vm._v(" "),
-    _c("div", [
-      _c("p", [_vm._v(" " + _vm._s(_vm.post.id) + " ")]),
+    _c("div", { staticClass: "home-blog-container col-10 offset-1" }, [
+      _c("p", [_vm._v("ID: " + _vm._s(_vm.post.id))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.post.title) + " ")]),
+      _c("p", { staticClass: "post-title" }, [_vm._v(_vm._s(_vm.post.title))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.post.title) + " ")]),
-      _vm._v(" "),
-      _c("p", [_vm._v(" " + _vm._s(_vm.post.desc))]),
+      _c("p", { staticClass: "post-description" }, [
+        _vm._v(_vm._s(_vm.post.desc))
+      ]),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.post.body))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.post.image) + " ")])
+      _c("p", [_vm._v(_vm._s(_vm.post.image))])
     ])
   ])
 }
@@ -80938,7 +80959,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Add Post")]),
+    _c("h3", { staticClass: "main-title text-center" }, [_vm._v("Add Post")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-lg-12" }, [
@@ -81094,7 +81115,30 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Blog Posts")]),
+    _c("div", { staticClass: "row search-bar" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.search,
+            expression: "search"
+          }
+        ],
+        attrs: { type: "text", placeholder: "Search Title..." },
+        domProps: { value: _vm.search },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.search = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("h3", { staticClass: "main-title text-center" }, [_vm._v("Blog Posts")]),
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-bordered" }, [
@@ -81102,7 +81146,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.posts, function(post) {
+        _vm._l(_vm.filteredLists, function(post) {
           return _c("tr", { key: post.id }, [
             _c("td", [_vm._v(_vm._s(post.id))]),
             _vm._v(" "),
@@ -81203,7 +81247,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Deleted Blog Posts")]),
+    _c("h3", { staticClass: "main-title text-center" }, [
+      _vm._v("Deleted Blog Posts")
+    ]),
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-bordered" }, [
