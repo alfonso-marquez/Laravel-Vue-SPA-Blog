@@ -34,7 +34,7 @@ class PostController extends Controller
         return response()->json(
             [
                 'success' => true,
-                'message' => 'Post added successfully'
+                'message' => 'Post was added successfully'
             ]
         );
     }
@@ -52,7 +52,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->update($request->all());
 
-        return response()->json('The post was successfully updated');
+        return response()->json('Post was successfully updated');
     }
 
     // soft delete post
@@ -61,7 +61,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->delete();
 
-        return response()->json('The post was successfully deleted');
+        return response()->json('Post was successfully deleted');
     }
 
      // restore post

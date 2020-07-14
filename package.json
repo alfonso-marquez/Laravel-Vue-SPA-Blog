@@ -25,9 +25,12 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.15.0",
+        "es6-promise": "^4.2.8",
         "vform": "^1.0.1",
         "vue-axios": "^2.1.5",
         "vue-progressbar": "^0.7.5",
-        "vue-router": "^3.3.4"
+        "vue-router": "^3.3.4",
+        "vue-truncate-filter": "^1.1.7",
+        "vuex": "^3.5.1"
     }
 }

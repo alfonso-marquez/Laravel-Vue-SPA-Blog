@@ -35,8 +35,7 @@
                     <router-link to="/admin/deletedPosts" class="nav-item nav-link"><b-icon icon="trash-fill"></b-icon> Deleted Blog Posts</router-link>
                 </div>
             </div>
-         </b-sidebar>
-         
+         </b-sidebar>     
         <div class="container">
             <router-view></router-view>
         </div>

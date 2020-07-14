@@ -7,8 +7,8 @@
         <h3 class="text-center main-title">Blog Posts</h3><br/>
         <div class="container">
             <ul class="blog-list">
+                <span v-if="!filteredLists.length">No results.</span>
                 <li v-for="post in filteredLists" :key="post.id">
-                    <router-link :to="{name: 'view', params: { id: post.id }}" class="post-links">
                     <div class="home-blog-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="col-12">
@@ -19,13 +19,27 @@
                             <div class="col-12">
                                 <div style="width:100%">
                                     <h5 class="post-description">{{ post.desc }}</h5>
-                                    <p class="post.body">{{ post.body }}</p>
+                                    <p class="post.body">{{ post.body | truncate(300, ' ... Contine Reading')}}</p>
                                     <p>{{ post.image }}</p>
                                 </div>
                             </div>
                         </div>
+                        <div class="row pt-2 pb-2">
+                            <div class="col-2">
+                                <p>Likes: {{likes}}</p>
+                            </div>
+                            <div class="col-2">
+                                <p>Views: {{views}} </p>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-12">
+                                <router-link :to="{name: 'view', params: { id: post.id }}" class="post-links">
+                                    <Button type="button" class="btn btn-info">View Post</Button>
+                                </router-link>
+                            </div>
+                        </div>
                     </div>
-                    </router-link>
                 </li>
             </ul>
     <div class="row">
@@ -38,6 +52,8 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
+
     export default {
         data() {
             return {
@@ -59,7 +75,17 @@
                 return this.posts.filter(post => {
                     return post.title.toLowerCase().includes(this.search.toLowerCase())
                 })
-                }
+                },
+                ...mapGetters({
+                    'likes' : 'getLikes',
+                    'views' : 'getViews',
+                    'likeStatus' : 'getLikeStatus',
+                }),
             },
+        methods: {
+            // addViewCounter() {
+            //     this.$store.commit('ADD_VIEW_COUNTER', 1)
+            // },
+        }
     }
 </script>

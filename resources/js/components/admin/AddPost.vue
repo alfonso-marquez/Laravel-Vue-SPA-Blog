@@ -18,7 +18,7 @@
                             <label>Body</label>
                             <textarea type="text" rows="10" class="form-control" v-model="post.body"></textarea>
                         </div>
-                        <div lass="form-group">
+                        <div class="form-group mb-3">
                             <label>Image</label>
                             <input type="text" class="form-control" v-model="post.image">
                             <!-- <input type="file" name="image"  id="inputFileUpload"
@@ -51,13 +51,16 @@
                 this.axios
                     .post('http://localhost:8000/api/post/add', this.post)
                     .then(response => (
-                        this.$router.push({name: 'home'}),
+                        this.$router.push({name: 'posts'}),
                         this.$Progress.finish()
                         // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
                     .finally(() => this.loading = false)
-            }
+            },
+            addLikeCounter() {
+                this.$store.commit('ADD_LIKE_COUNTER', 1)
+            }   
         }
     }
 </script>
