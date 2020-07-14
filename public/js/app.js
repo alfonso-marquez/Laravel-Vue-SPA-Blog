@@ -80992,7 +80992,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row pt-2 pb-4" }, [
+                    _c("div", { staticClass: "row pt-2 pb-3" }, [
                       _c("div", { staticClass: "col-12" }, [
                         _c("div", { staticStyle: { width: "100%" } }, [
                           _c("h5", { staticClass: "post-description" }, [
@@ -81016,7 +81016,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row pt-2 pb-2" }, [
+                    _c("div", { staticClass: "row pt-2 pb-1" }, [
                       _c("div", { staticClass: "col-2" }, [
                         _c("p", [_vm._v("Likes: " + _vm._s(_vm.likes))])
                       ]),
@@ -81026,10 +81026,10 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row pt-2" }, [
+                    _c("div", { staticClass: "row" }, [
                       _c(
                         "div",
-                        { staticClass: "col-12" },
+                        { staticClass: "col-12 mx-2" },
                         [
                           _c(
                             "router-link",

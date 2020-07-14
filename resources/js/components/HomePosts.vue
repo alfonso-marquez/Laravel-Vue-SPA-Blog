@@ -15,7 +15,7 @@
                                 <h4 class="post-title text-center">{{ post.title }}</h4>
                             </div>
                         </div>
-                        <div class="row pt-2 pb-4">
+                        <div class="row pt-2 pb-3">
                             <div class="col-12">
                                 <div style="width:100%">
                                     <h5 class="post-description">{{ post.desc }}</h5>
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row pt-2 pb-2">
+                        <div class="row pt-2 pb-1">
                             <div class="col-2">
                                 <p>Likes: {{likes}}</p>
                             </div>
@@ -32,8 +32,8 @@
                                 <p>Views: {{views}} </p>
                             </div>
                         </div>
-                        <div class="row pt-2">
-                            <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 mx-2">
                                 <router-link :to="{name: 'view', params: { id: post.id }}" class="post-links">
                                     <Button type="button" class="btn btn-info">View Post</Button>
                                 </router-link>
