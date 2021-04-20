@@ -1,15 +1,14 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@400;700&display=swap");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/src/index.scss";
 
 body {
     background: #fcfcfc;
@@ -19,34 +18,34 @@ ul {
 }
 .app-title {
     color: $blue;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 24px;
     margin: 16px 0 16px;
 }
 .main-title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
     margin: 36px;
 }
-.home-panel{
-    margin-bottom:16px;
+.home-panel {
+    margin-bottom: 16px;
 }
-.admin-panel{
-    margin-bottom:16px;
+.admin-panel {
+    margin-bottom: 16px;
 }
 .nav-link {
     color: $blue;
 }
 .post-title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
 }
 .post-description {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: italic;
 }
 .post-body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 li a {
     text-decoration: none !important;
@@ -59,20 +58,18 @@ li a:hover {
 .home-blog-container {
     border-radius: 50px;
     background: #fcfcfc;
-    box-shadow:  15px 15px 30px #bababa, 
-                -15px -15px 30px #ffffff;
-    padding:24px;
-    margin-bottom:32px;
+    box-shadow: 15px 15px 30px #bababa, -15px -15px 30px #ffffff;
+    padding: 24px;
+    margin-bottom: 32px;
     min-width: 80vw;
 }
 .blog-list {
-
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
 }
 .search-bar {
-    right: 0;
-    position: absolute;
-    margin: 16px;
+    // right: 0;
+    // position: absolute;
+    // margin: 16px;
 }

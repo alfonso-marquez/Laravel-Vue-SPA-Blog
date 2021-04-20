@@ -1,45 +1,49 @@
-import AllPosts from './components/admin/AllPosts.vue';
-import AddPost from './components/admin/AddPost.vue';
-import EditPost from './components/admin/EditPost.vue';
-import DeletedPosts from './components/admin/DeletedPosts.vue';
+import Index from "./components/admin/Index.vue";
+import AddApplicant from "./components/admin/AddApplicant.vue";
+import EditApplicant from "./components/admin/EditApplicant.vue";
+import DeletedApplicants from "./components/admin/DeletedApplicants.vue";
 
-import HomePosts from './components/HomePosts.vue';
-import ViewPost from './components/View.vue';
-
-
+import Home from "./components/Home.vue";
+import ViewApplicant from "./components/ViewApplicant.vue";
 
 export const routes = [
-    { 
-        path: '*', redirect: '/'
+    {
+        path: "*",
+        redirect: "/"
     },
     {
-        name: 'posts',
-        path: '/admin/posts',
-        component: AllPosts
+        name: "index",
+        path: "/admin/index",
+        component: Index
     },
     {
-        name: 'home',
-        path: '/',
-        component: HomePosts
+        name: "home",
+        path: "/",
+        component: Home
     },
     {
-        name: 'view',
-        path: '/view/:id',
-        component: ViewPost
+        name: "index",
+        path: "/admin/applicants",
+        component: Index
     },
     {
-        name: 'add',
-        path: '/admin/add',
-        component: AddPost
+        name: "view",
+        path: "/view/:id",
+        component: ViewApplicant
     },
     {
-        name: 'edit',
-        path: '/admin/edit/:id',
-        component: EditPost
+        name: "add",
+        path: "/admin/add",
+        component: AddApplicant
     },
     {
-        name: 'deletedPosts',
-        path: '/admin/deletedPosts',
-        component: DeletedPosts
+        name: "edit",
+        path: "/admin/edit/:id",
+        component: EditApplicant
     },
+    {
+        name: "deletedApplicants",
+        path: "/admin/deletedApplicants",
+        component: DeletedApplicants
+    }
 ];

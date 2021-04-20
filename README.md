@@ -1,8 +1,8 @@
-Laravel Vue Blog
+<!-- Laravel Vue Blog
 
 BackEnd
 
-API shall provide links for images of a blog and its contents. 
+API shall provide links for images of a blog and its contents.
 
 Shall handle file upload for images for a specific blog.
 
@@ -20,7 +20,7 @@ FrontEnd
 ✅ Create a SPA approach on building the frontend
 
 
-✅ Blog post must contain a title and a description 
+✅ Blog post must contain a title and a description
 
 ✅ Can create or edit blog posts
 
@@ -28,4 +28,4 @@ FrontEnd
 
 ✅ Can delete and restore blog post
 
- API response must have proper format
+ API response must have proper format -->
